@@ -1,3 +1,8 @@
+// Kayli Matsuyoshi
+// APCS2 pd1
+// HW05 - MergeSort! 
+// 2018-02-07w
+
 /*======================================
   class MergeSort
   Implements mergesort on array of ints.
@@ -19,36 +24,33 @@ public class MergeSort
      ******************************************************/
     private static int[] merge( int[] a, int[] b )
     {
-      
 	int[] finalArray = new int[a.length + b.length];
 	int counter = 0;
+	int aCounter = 0;
+	int bCounter = 0; 
 	while ( counter < finalArray.length ) {
-	    if ( a.length > 1  && b.length > 1 ) {
-		if ( a[0] < b[0] ) {
-		    finalArray[counter] = a[0];
-		    // remove array1[0] from array1
-		    a = Arrays.copyOfRange( a, 1, (a.length - 1) );
+	    if ( aCounter < a.length  && bCounter < b.length ) {
+		if ( a[aCounter] < b[bCounter] ) {
+		    finalArray[counter] = a[aCounter];
 		    counter += 1;
-		    printArray(finalArray);		    
+		    aCounter += 1; 		    
 		}
 		else {
-		    finalArray[counter] = b[0];
-		    b = Arrays.copyOfRange( b, 1, (b.length - 1) );
+		    finalArray[counter] = b[bCounter];
 		    counter += 1;
-		    printArray(b);
-		    printArray(finalArray);
+		    bCounter += 1;
 		}
-	    }
+	    } 
 	    else {
-		if ( a.length > 1 ) {
-		    //add elements of array2 to finalArray
-		    counter += a.length;
-		    printArray(finalArray);
+		if ( aCounter < a.length ) {
+		    finalArray[counter] = a[aCounter];
+		    counter += 1;
+		    aCounter += 1;
 		}
-		else {
-		    //add elements of array1 to finalArray\
-		    counter += b.length;
-		    printArray(finalArray);
+		else if ( bCounter < b.length ) {
+		    finalArray[counter] = b[bCounter];
+		    counter +=1;
+		    bCounter += 1;
 		}
 	    }
 	    
@@ -65,7 +67,22 @@ public class MergeSort
      ******************************************************/
     public static int[] sort( int[] arr )
     {
-	return arr;
+        if ( arr.length == 1 ) {
+	    return arr;
+	}
+	else {
+	    int[] a = new int[arr.length / 2];
+	    int[] b = new int[arr.length - a.length];
+	    for ( int i = 0; i < arr.length; i++ ) {
+		if ( i < a.length ) {
+		    a[i] = arr[i];
+		}
+		else {
+		    b[i - a.length] = arr[i];
+		}
+	    }
+	    return merge( sort(a), sort(b));  
+	}
     }//end sort()
 
 
@@ -112,14 +129,14 @@ public class MergeSort
 	printArray( merge(arr1,arr0) ); // [0,1,]
 
 	System.out.println("\nMerging arr3 and arr4: ");
-	printArray( merge(arr4,arr6) ); // [1,2,3,3,4,4,]
-	/*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
+	printArray( merge(arr3,arr4) ); // [1,2,3,3,4,4,]
 
 	  System.out.println("\nSorting arr4-7...");
 	  printArray( sort( arr4 ) );
 	  printArray( sort( arr5 ) );
 	  printArray( sort( arr6 ) );
 	  printArray( sort( arr7 ) );
+	/*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
 	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     }//end main()
 
