@@ -34,9 +34,27 @@ public class MatrixFinder {
                         {18,20,22,24},
                         {26,28,30,32} };
 
+    long startTime = System.nanoTime();
     System.out.println(MatrixFinder.find(matrix,5)); //(1,3)
+    long endTime = System.nanoTime();
+    long difference = endTime - startTime;
+
+    System.out.println( difference );
+    
     System.out.println(MatrixFinder.find(matrix2,3)); //(-1,-1)
 
+    int[][] matrix3 = { { 2, 4, 6, 8,10},
+                        {12,14,16,18,20},
+                        {22,24,26,28,30},
+                        {32,34,36,38,40},
+			{42,44,46,48,50}};
+
+    startTime = System.nanoTime();
+    System.out.println(MatrixFinder.find(matrix3,36)); //(3,2)
+    endTime = System.nanoTime();
+    difference = endTime - startTime;
+    System.out.println( difference );
+    
   }
 
 }
