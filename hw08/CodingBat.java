@@ -6,7 +6,7 @@
 public class CodingBat {
 
     // bunnyEars
-    public int bunnyEars(int bunnies) {
+    public static int bunnyEars(int bunnies) {
 	if (bunnies > 0) {
 	    return bunnyEars( bunnies - 1 ) + 2;
 	}
@@ -16,7 +16,7 @@ public class CodingBat {
     }
 
     // bunnyEars2
-    public int bunnyEars2(int bunnies) {
+    public static int bunnyEars2(int bunnies) {
 	if ( bunnies > 0 ) {
 	    if ( bunnies % 2 == 0 ) {
 		return 3 + bunnyEars2(bunnies - 1);
@@ -31,7 +31,7 @@ public class CodingBat {
     }
 
     // sumDigits
-    public int sumDigits(int n) {
+    public static int sumDigits(int n) {
 	if ( n >= 10 ) {
 	    return sumDigits( n / 10 ) + ( n % 10 );
 	}
@@ -41,7 +41,7 @@ public class CodingBat {
     }
 
     // factorial
-    public int factorial(int n) {
+    public static int factorial(int n) {
 	if ( n == 1 ) {
 	    return n;
 	}
@@ -51,7 +51,7 @@ public class CodingBat {
     }
 
     // triangle 
-    public int triangle(int rows) {
+    public static int triangle(int rows) {
 	if ( rows > 1 ) {
 	    return rows + triangle( rows - 1 );
 	}
@@ -64,7 +64,7 @@ public class CodingBat {
     }
 
     // fibonacci
-    public int fibonacci(int n) {
+    public static int fibonacci(int n) {
 	if ( n == 0 ) {
 	    return 0;
 	}
@@ -72,8 +72,62 @@ public class CodingBat {
 	    return 1;
 	}
 	else {
-	    return fibonacci( n - 1 ) +  + fibonacci( n - 2 );
-	}
+	    return fibonacci( n - 1 ) +  + fibonacci( n - 2 );	}
     }
-    
+
+    // MAIN METHOD
+    public static void main( String args[] ) {
+
+	System.out.println( "Testing bunnyEars..." );
+
+	System.out.println( "No bunnies :<" );
+        System.out.println( "Ears: " + bunnyEars(0) ); // 0
+	System.out.println( "1 Bunny" );
+	System.out.println( "Ears: " + bunnyEars(1) ); // 2
+	System.out.println( "2 Bunnies" );
+	System.out.println( "Ears: " + bunnyEars(2) ); // 4
+	System.out.println( "9 Bunnies" );
+	System.out.println( "Ears: " + bunnyEars(9) ); // 18
+	
+	System.out.println( "...................... " );
+	
+       	System.out.println( "Testing bunnyEars2... " );
+        
+	System.out.println( "No bunnies :<" );
+	System.out.println( "Ears: " + bunnyEars2(0) ); // 0
+	System.out.println( "1 Bunny" );
+	System.out.println( bunnyEars2(1) ); // 2
+	System.out.println( "2 Bunnies" );
+	System.out.println( bunnyEars2(2) ); // 5
+	System.out.println( "9 Bunnies" );
+	System.out.println( bunnyEars2(9) ); // 22
+	
+	System.out.println( "...................... " );
+	
+	System.out.println( "Testing sumDigits... " );
+
+	System.out.println( "Number: 0" );
+	System.out.println( sumDigits(0) ); // 0
+	System.out.println( "Number: 1" );
+	System.out.println( sumDigits(1) ); // 1
+	System.out.println( "Number: 159" );
+	System.out.println( sumDigits(159) ); // 15
+	System.out.println( "Number: 167253" );
+	System.out.println( sumDigits(167253) ); // 24
+	
+	System.out.println( "...................... " );
+
+	System.out.println( "Testing factorial... " );
+
+	System.out.println( "...................... " );
+
+	System.out.println( "Testing triangle... " );
+
+	System.out.println( "...................... " );
+
+	System.out.println( "Testing fibonacci... " );
+
+	System.out.println( "...................... " );
+	
+    }
 }
