@@ -1,0 +1,83 @@
+Kayli Matsuyoshi
+APCS2 pd1
+HW09 -- Yaaasss Queens
+2018-02-27t
+
+2x2 
+
+qn	nq
+nq	qn
+
+No solutions
+Placing one queen in each column and making sure that both occupy all the rows already creates an error in the state, because queens can attack diagonally, meaning that if the queens cannot be on the same diagonal.
+This case is unsolveable and there are no solutions for this case.
+
+3x3 
+
+qnn	qnn	nqn	nqn	nnq 
+nnq	nqn	qnn	nnq	qnn
+nqn	nnq	nnq	qnn	nqn
+
+No solutions
+There are also errors in the example states for a 3x3 board, where a queen is not on a diagonal with one queen, it is on the diagonal of another.
+Hence, there are no solutions for this case, meaning it is unsolvable.
+
+4x4 
+	 vv	 vv
+qnnn	nnqn	nqnn
+nnqn	qnnn	nnnq
+nqnn	nnnq	qnnn
+nnnq	nqnn	nnqn
+ 
+2 solutions
+Using evidence from the outcomes above, there are 2 solutions because the process of placing exactly one queen in each row and each column results in no queens being on each others' diagonal path for a state and its mirrored version. Therefore, the case is solveable.
+
+5x5
+	  v       v
+nnnnq	nnnqn	nqnnn	
+qnnnn	qnnnn	nnnnq	
+nnnqn	nnqnn	nnqnn	
+nqnnn	nnnnq	qnnnn	
+nnqnn	nqnnn	nnnqn	
+
+2 solutions
+The pattern repeats in this case as well, where two states demonstrate that no queens will eventually share the same diagonal, with all being in different rows and columns, making it solveable. 
+
+6x6
+
+nnqnnn	
+qnnnnn	
+nnnnqn	
+nqnnnn	
+nnnnnq	
+nnnqnn	
+
+No solutions
+There are again no solutions for this unsolveable case due to previously stated reasons.
+
+7x7
+
+nnnnnqn
+nnnqnnn
+nqnnnnn
+nnnnnnq
+qnnnnnn
+nnqnnnn
+nnnnqnn
+
+No solutions
+This case is unsolvable as well, using the same reasoning as before.
+
+8x8
+
+qnnnnnnn
+nnqnnnnn
+nnnnqnnn
+nqnnnnnn
+nnnqnnnn
+nnnnnqnn
+nnnnnnnq
+nnnnnnqn
+
+No solutions
+Finally, it can be concluded that there are no states that satisfy the condition for an 8x8 chess board case, even using the "L shape" method, meant to prevent queens from intersecting at diagonals. At the end of this utilization, the queens eventually meet on the same diagonal. Therefore, this case is unsolveable, as well as all the ones above, and it is impossible to place n queens on an nxn chess board such that none of them can attack each other. 
