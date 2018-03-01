@@ -1,4 +1,4 @@
-// Kayli Matsuyoshi
+`// Kayli Matsuyoshi
 // APCS2 pd1
 // HW10 -- Freddie Mercury, Brian May, Roger Taylor, John Deacon
 // 2018-02-28w
@@ -177,6 +177,12 @@ public class QueenBoard
 	c.printSolution();
 	System.out.println( "Testing Algo..." );
 	c.solve();
+
+	QueenBoard d = new QueenBoard(10);
+	System.out.println( "-------- 10x10 Board -----------" );
+	d.printSolution();
+	System.out.println( "Testing Algo..." );
+	d.solve();
     }
     
 }//end class
