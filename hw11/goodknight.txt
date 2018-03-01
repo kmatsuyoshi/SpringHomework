@@ -1,0 +1,16 @@
+Kayli Matsuyoshi
+APCS2 pd1
+HW11 -- Get on the Bus
+2018-02-29r
+
+Knight's Tour Algorithm
+
+This function will be a recursive function with helper functions such as one that adds knights to the board, one that removes nights, one that determines if a  move can be made, and determines the position, and one that prints the chessboard.
+Tail recursion should be utilized so the coordinates of the knights can change. 
+If a move can be made (the knight can move in an "L" shape in at least one direction) by the knight then a knight is added to the board and the function repeats from that coordinate.
+However, if a move cannot be made, the path of solutions is eliminated and the function will back track to the last point to change the location it is placed at. 
+This method will continue until a solution is reached. This may not work for some boards, but it effectively eliminates all states that do not satisfy the problem. 
+1. Tail Recursion will call a helper recursive function starting from any coordinates (parameters.
+2. If a move can be made, a knight is added to the board, and the helper function is recursively called.
+3. If no viable moves can be made, this path is fatal and the function "backtracks" to the last set of move options. 
+4. Steps are repeated until board is solved. 
