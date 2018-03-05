@@ -1,0 +1,35 @@
+Kayli Matsuyoshi
+APCS2 pd1
+HW12 -- __+3R|\/|1|\|4|_  1|_|_|\|3$$__ 
+2018-03-02f 
+
+Q0: What do you make of the multiple class definitions in a single .java file?
+I think that multiple classes in a single .java file is a good method of consolodating classes and subclasses, and makes compiling easier. And I think that only the main method of the class that the file is named after gets run when java is called.
+Q1: How are the command line arguments processed?
+The command line arguments are processed in terms of board size and delay time.         
+Q2: What happens if no command line arguments are given?
+If there are no command line arguments, then the board size is not set and there is no delay time. 
+Q3: What is the nature/purpose of the recursion? Is it necessary for the animation?
+The recursion is necessary for animation because it transitions between movements.
+Q4: What do you expect to see when you run it?
+I expect to see a smooth animation of a changing matrix with some delay time between each frame.
+Q5: How long do you expect it to run?
+I do not expect it to run over two minutes for a board of size 8. Therefore, it should at most run for a bit over a minute. 
+Q6: What does ANSI stand for? (You are permitted some intertubes searching here…). What is it good for?
+ANSI stands for the American National Standards Institute, but in coding, it refers to an encoding format given an unsuiting name. It is an extension of the ASCII characters by 128 characters. 
+Q7: How did your expectations compare to your observations?
+My observations were correct in terms of runtime, but I am still unsure of the purpose of the recursive call. After seeing the animation, I want to conclude that the recursion will increase the number being placed by 1 and place it in a new coordinate. 
+Q8: How might you adapt this framework to animate a probing for a Knight’s Tour?
+This framework can animate a probing for a Knight's tour because the number being placed would also increase by 1 each placement, and the only thing changing is the location of the placement. 
+
+Knight's Tour Algorithm
+
+This function will be a recursive function with helper functions such as one that adds knights to the board, one that removes nights, one that determines if a  move can be made, and determines the position, and one that prints the chessboard.
+Tail recursion should be utilized so the coordinates of the knights can change. 
+If a move can be made (the knight can move in an "L" shape in at least one direction) by the knight then a knight is added to the board and the function repeats from that coordinate.
+However, if a move cannot be made, the path of solutions is eliminated and the function will back track to the last point to change the location it is placed at. 
+This method will continue until a solution is reached. This may not work for some boards, but it effectively eliminates all states that do not satisfy the problem. 
+1. Tail Recursion will call a helper recursive function starting from any coordinates (parameters.
+2. If a move can be made, a knight is added to the board, and the helper function is recursively called.
+3. If no viable moves can be made, this path is fatal and the function "backtracks" to the last set of move options. 
+4. Steps are repeated until board is solved. 
