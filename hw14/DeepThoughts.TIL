@@ -1,4 +1,4 @@
-//Team Cookie - Kevin Lin, Victor Lin, Kayli Matsuyoshi
+//Zoom Zoom Zucchini - Kevin Lin, Victor Lin, Kayli Matsuyoshi
 //APCS2 -- Pd1
 //HW14 -- 
 //2018-03-06t
@@ -18,10 +18,13 @@ SECTION UNO
 
 Q1: From any starting position, can an open tour always be found? Explain.
 No, because after testing the algo on the board, multiple different spots did not yield open tours. 
+Not every spot will have an open tour, upon testing random spots using the Knight's Tour algorithm, some did not yield a solved board.
 Q2: Same, but for closed tour.
 Also no, because if this does not apply to open tours, a closed tour, with more restrictions, should not yeild solutions. 
+f you can't guarantee a solution for any spot on the board, you definitely can't guarantee a closed solution.
 Q3: How do you explain the increase in execution time as n increases?
 Since there is more space on the board, there are more possible moves, thus more runtime. 
+A larger board means more possible moves for the computer to test, so it'll take longer to execute completely.
 Q4: Thoughts on optimization?
 Removing the printing methods, and eliminating moves where the next moves are invalid may optimize the method. 
 
