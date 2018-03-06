@@ -3,6 +3,17 @@
 //HW14 -- 
 //2018-03-06t
 
+/*======================================
+  class KnightTour
+  Animates a Knight's Tour of a square chess board.
+
+  Mean execution times for boards of size n*n:
+  n=5   0.145s    over 5 executions
+  n=6   0.1778s    over 5 executions
+  n=7   0.4044s    over 5 executions
+  n=8   0.4042s    over 5 executions
+  ======================================*/
+
 SECTION UNO
 
 Q1: From any starting position, can an open tour always be found? Explain.
