@@ -12,14 +12,12 @@
  ***************************************/
 
 public class Mysterion {
-    
-    // ~~~~~~~~ INSTANCE VARIABLES  ~~~~~~~~~~
-
-    private static int[] array;
-    
+        
     // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~
 
-    //helper method for displaying an array
+    //helper method for displaying an array Value..
+[7,1,5,12,3]
+
     public static void printArray( int[] array ) {
 	System.out.print("[");
 	for( int i = 0; i < array.length - 1; i++ )
@@ -93,7 +91,7 @@ public class Mysterion {
 	int[] magicalMama = { 7, 1, 5, 12, 3 };
 	printArray( magicalMama );
 	System.out.println( "..Testing..");
-	System.out.println( mysterion( magicalMama, 0, 1, 2 ) );
+	System.out.println( mysterion( magicalMama, 0, 4, 3 ) );
 	printArray( magicalMama );
     }
 
