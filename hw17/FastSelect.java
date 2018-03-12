@@ -69,6 +69,9 @@ public class FastSelect {
      4. If that position is less than y by 1, it is the index of the yth smallest value and array[y] can be returned.
      5. If the position returned is greater than the one we're looking for, lessen the search area by decreasing the upperBound.
      6. If the position returned is less than y-1, then lessen the search area by increasing the lowerBound. 
+ * Big Oh Runtime - O(nlogn)
+   Best Case Scenario: O(n)
+   Worst Case Scenario: O(nlogn) 
  ***************************************/
 
     public static int fastSelect( int[] array, int y, int lowerBound, int upperBound) {
