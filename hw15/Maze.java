@@ -125,13 +125,13 @@ class MazeSolver
     }
     //other base case(s)...
     // IF NOT ON A PATH
-    else if ( x > maze.length ) {
+    else if ( x > w && x < 0 ) {
 	return;
     }
-    else if ( y > maze[x].length ) {
+    else if ( y > h && x < 0 ) {
 	return;
     }
-    else if ( maze[x][y] != PATH ) {
+    else if ( !onPath(x,y) ) {
 	return;
     }
     //recursive reduction
@@ -139,14 +139,10 @@ class MazeSolver
 	maze[x][y] = HERO;
 	System.out.println( this );
 
-	solve( x-1, y+1 );
 	solve( x-1, y );
-	solve( x-1, y-1 );
 	solve( x, y+1 );
 	solve( x, y-1 );
-	solve( x+1, y+1 );
 	solve( x+1, y );
-	solve( x+1, y-1 );
 
 	maze[x][y] = VISITED_PATH;
 	System.out.println( this );
