@@ -8,11 +8,26 @@ public class LLNode
 {
     //instance vars
 
-    private LLNode nextNode;
-    private String cargo;
+    public LLNode nextNode;
+    public String cargo;
 
     // constructor 
 
+    public LLNode() {
+	cargo = null;
+	nextNode = null;
+    }
+
+    public LLNode( String cargoString ) {
+	this();
+	cargo = cargoString;
+    }
+
+    public LLNode( String cargoString, LLNode next ) {
+	this();
+	cargo = cargoString;
+	nextNode = next;
+    }
 
     //--------------v  ACCESSORS  v--------------
 
@@ -40,8 +55,9 @@ public class LLNode
 
     public LLNode setNext( LLNode newNode )
     {
+	LLNode oldNode = nextNode;
         nextNode = newNode;
-	return nextNode;
+	return oldNode;
     }
     
     //--------------^  MUTATORS  ^--------------
