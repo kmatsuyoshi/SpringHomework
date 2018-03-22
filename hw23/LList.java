@@ -1,9 +1,4 @@
-// Kayli Matsuyoshi
-// APCS2 pd1
-// HW21 - Rockin Through the Night
-// 2018-03-20t
-
-// Kayli Matsuyoshi
+// Team ScrombleTongs (Kayli Matsuyoshi and Johnny Wong)
 // APCS2 pd1
 // HW23 - 
 // 2018-03-23f
@@ -65,23 +60,23 @@ public class LList implements List
 	    LLNode headNode = new LLNode( x );
 	    head = headNode;
 	    return true;
+	} // if the headNode is null, then make a new node
+	LLNode currentNode = head; // start at head
+        int counter = 0; // create a counter
+	while ( counter < position-1 ) { // iterate to the position before the insert position
+	    currentNode = currentNode.getNext(); // parse through the list one element at a time
+	    counter += 1; // increment counter
 	}
-	LLNode currentNode = head;
-        int counter = 0;
-	while ( counter < position-1 ) {
-	    currentNode = currentNode.getNext();
-	    counter += 1;
-	}
-	LLNode newNode = new LLNode( x );
-	LLNode tempNode = currentNode.getNext();
-	currentNode.setNext( newNode );
-	newNode.setNext( tempNode );
-	return true;
+	LLNode newNode = new LLNode( x ); // create a new node with the given cargo value
+	LLNode tempNode = currentNode.getNext(); // node in which the new node should point to
+	currentNode.setNext( newNode ); // connect the current node to the new node
+	newNode.setNext( tempNode ); // connect the new node to the temp node
+	return true; // end function
     }
 
     // remove element at position
     public String remove( int position ) {
-	LLNode currentNode = head;
+	LLNode currentNode = head; 
 	int counter = 0;
 	while ( counter < position-1 ) {
 	    currentNode = currentNode.getNext();
