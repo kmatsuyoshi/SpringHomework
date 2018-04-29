@@ -1,0 +1,35 @@
+Kayli Matsuyoshi
+APCS2 pd1
+HW42 -- A Tree Grows in 251
+2018-04-30m
+
+In a plaintext file, write a procedure for reconstructing a binary tree, given traversals. 
+State explicitly, at the outset, the minimum prerequisite information.
+
+Minimum Prerequisite: Two Traversals, each with the order that they are given in.
+
+Reconstructing a Binary Tree
+1. Identify if the two traversals given are a combination of PreOrder and InOrder, InOrder and PostOrder, or PreOrder and PostOrder.
+2. If the combination is PreOrder and InOrder
+	a. Find the initial value of the PreOrder Traversal collection
+	b. Find said value in the InOrder Traversal Collection 
+	c. Use this value as the root of the tree
+	d. Use the items preceding the index of the found value in the InOrder collection and the rest of the items in the PreOrder collection to make the left subtree
+	e. Use the items succeding the index of the found value in the InOrder collection and the rest of the items in the PreOrder collection forming the right subtree
+	f. Combine the two trees under the root. 
+3. If the combination is InOrder and PostOrder
+	a. Find the last value of the PostOrder Traversal collection
+	b. Find said value in the InOrder Traversal Collection 
+	c. Use this value as the root of the tree
+	d. Use the items preceding the index of the found value in the InOrder collection and the rest of the items in the PostOrder collection to make the left subtree
+	e. Use the items succeding the index of the found value in the InOrder collection and the rest of the items in the PostOrder collection forming the right subtree
+	f. Combine the two trees under the root. 
+4. If the combination is PreOrder and PostOrder
+	a. Find the last value of the PostOrder Traversal collection
+	b. Find said value in the PreOrder Traversal Collection 
+	c. Use this value as the root of the tree
+	d. Use the rest of the items in the PreOrder collection and the items preceding the value in the PostOrder collection to make the left subtree
+	e. Use the rest of the items in the PreOrder collection and the items succeding the value in the PostOrder collection forming the right subtree
+	f. Combine the two trees under the root. 
+	[ DISCLAIMER: Probably doesn't work ]
+ 
