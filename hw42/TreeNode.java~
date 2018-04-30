@@ -7,9 +7,11 @@
 
 public class TreeNode
 {
-    // instance variables / attributes of a TreeNode:
-    int _cargo;        // this node's data
-    TreeNode _lt, _rt; // pointers to left, right subtrees
+
+    //instance variables / attributes of a TreeNode:
+    int _cargo;        //this node's data
+    TreeNode _lt, _rt; //pointers to left, right subtrees
+
 
     /*****************************************************
      * default constructor
@@ -18,10 +20,9 @@ public class TreeNode
      *****************************************************/
     TreeNode( int initValue )
     {
-	_cargo = initValue;
-	_lt = null;
-	_rt = null;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
+          
 
     /*****************************************************
      * overloaded constructor
@@ -29,9 +30,7 @@ public class TreeNode
      *****************************************************/
     TreeNode( int initValue, TreeNode initLeft, TreeNode initRight ) 
     {
-        _cargo = initValue;
-	_lt = initLeft;
-	_rt = initRight;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
  
 
@@ -40,7 +39,7 @@ public class TreeNode
      *****************************************************/
     TreeNode getLeft() 
     {
-        return _lt;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
 
 
@@ -49,7 +48,7 @@ public class TreeNode
      *****************************************************/
     TreeNode getRight() 
     {
-        return _rt;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
 
 
@@ -58,7 +57,7 @@ public class TreeNode
      *****************************************************/
     int getValue() 
     {
-        return _cargo;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
 
 
@@ -67,7 +66,7 @@ public class TreeNode
      *****************************************************/
     void setLeft( TreeNode theNewLeft ) 
     {
-        _lt = theNewLeft;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
 
 
@@ -76,7 +75,7 @@ public class TreeNode
      *****************************************************/
     void setRight( TreeNode theNewRight ) 
     {
-        _rt = theNewRight;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
 
 
@@ -85,7 +84,7 @@ public class TreeNode
      *****************************************************/
     void setValue( int theNewValue ) 
     {
-        _cargo = theNewValue;
+      /*** YOUR IMPLEMENTATION HERE ***/
     }
  
 }//end class
