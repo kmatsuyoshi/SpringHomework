@@ -1,3 +1,8 @@
+// Kayli Matsuyoshi
+// APCS2 pd1
+// HW42 -- Algorithm as Data Structure
+// 2018-05-01t
+
 /*****************************************************
  * class BST - v1:partial
  * SKELETON
@@ -13,7 +18,6 @@
 
 public class BST
 {
-
     // instance variables / attributes of a BST:
     TreeNode _root;
 
@@ -31,7 +35,7 @@ public class BST
     public void insert( int newVal )
     {
 	TreeNode newNode = new TreeNode( newVal );
-	if ( _root = null ) {
+	if ( _root == null ) {
 	    _root = newNode;
 	    return;
 	}
@@ -40,9 +44,25 @@ public class BST
     //recursive helper for insert(int)
     public void insert( TreeNode stRoot, TreeNode newNode )
     {
-        if ( stRoot.getLeft() < newNode ) {
-	    
+        if ( newNode.getValue() < stRoot.getValue() ) {
+	    if ( stRoot.getLeft() == null ) {
+		stRoot.setLeft( newNode );
+	    }
+	    else {
+		insert( stRoot.getLeft(), newNode );
+		return;
+	    }
 	}
+	else if ( newNode.getValue() > stRoot.getValue() ) {
+	    if ( stRoot.getRight() == null ) {
+		stRoot.setRight( newNode );
+	    }
+	    else {
+		insert( stRoot.getRight(), newNode );
+		return;
+	    }
+	}
+	
     }//end insert()
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,37 +78,50 @@ public class BST
     }
     public void preOrderTrav( TreeNode currNode )
     {
-	/*** YOUR IMPLEMENTATION HERE ***/
+        if ( currNode == null ) {
+	    return;
+	}
+        System.out.println( currNode.getValue() );
+	preOrderTrav( currNode.getLeft() );
+	preOrderTrav( currNode.getRight() );	
     }
 
     //recurse left, process root, recurse right
     public void inOrderTrav()
     {
-	/*** YOUR IMPLEMENTATION HERE ***/
+	inOrderTrav ( _root );
     }
     public void inOrderTrav( TreeNode currNode )
     {
-	/*** YOUR IMPLEMENTATION HERE ***/
+        if ( currNode == null ) {
+	    return;
+	}
+	inOrderTrav( currNode.getLeft() );
+        System.out.println( currNode.getValue() );
+	inOrderTrav( currNode.getRight() );
     }
 
     // recurse left, recurse right, process root
     public void postOrderTrav()
     {
-	/*** YOUR IMPLEMENTATION HERE ***/
+	postOrderTrav( _root );
     }
     public void postOrderTrav( TreeNode currNode )
     {
-	/*** YOUR IMPLEMENTATION HERE ***/
+        if ( currNode == null ) {
+	    return;
+	}
+	postOrderTrav( currNode.getLeft() );
+	postOrderTrav( currNode.getRight() );
+        System.out.println( currNode.getValue() );
     }
 
     //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
     //main method for testing
     public static void main( String[] args )
     {
-	/*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 
 	  BST arbol = new BST();
 
@@ -100,7 +133,7 @@ public class BST
 	  arbol.insert( 6 );
 	  arbol.insert( 1 );
 	  arbol.insert( 3 );
-
+	  
 	  System.out.println( "\n-----------------------------");
 	  System.out.println( "pre-order traversal:" );
 	  arbol.preOrderTrav();
@@ -114,6 +147,7 @@ public class BST
 	  arbol.postOrderTrav();
 
 	  System.out.println( "\n-----------------------------");
+	/*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     }
 

@@ -1,3 +1,8 @@
+// Kayli Matsuyoshi
+// APCS2 pd1
+// HW42 -- Algorithm as Data Structure
+// 2018-05-01t
+
 /*****************************************************
  * class TreeNode
  * SKELETON
